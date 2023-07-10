@@ -36,6 +36,9 @@ object ObjectOrientation extends App {
     def eat(animal: Animal): Unit
   }
 
+  //这个非常有用！！！！
+  //连 1 + 2 实际上都是function
+  //1.+(2)
   trait Philosopher {
     def ?!(thought: String): Unit // valid method name
   }
