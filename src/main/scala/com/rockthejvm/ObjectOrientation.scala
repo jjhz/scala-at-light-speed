@@ -72,6 +72,7 @@ object ObjectOrientation extends App {
    */
 
   // singleton object
+  //这里既是单例，同时也提供了java没有的功能就是临时想给类加一些属性。我觉得挺实用的，叫做companions伴侣
   object MySingleton { // the only instance of the MySingleton type
     val mySpecialValue = 53278
     def mySpecialMethod(): Int = 5327
@@ -82,6 +83,7 @@ object ObjectOrientation extends App {
   MySingleton.apply(65)
   MySingleton(65) // equivalent to MySingleton.apply(65)
 
+  //伴侣类名字相同就可以，伴侣可以access非object的所以属性
   object Animal { // companions - companion object
     // companions can access each other's private fields/methods
     // singleton Animal and instances of Animal are different things
