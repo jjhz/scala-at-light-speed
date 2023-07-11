@@ -1,7 +1,7 @@
 package com.rockthejvm
 
 import scala.util.Try
-
+import scala.util.{Failure, Success, Try}
 object jiang_try_option extends App {
 
   def myEx(): String = throw new RuntimeException //注意，这里是返回string，但是写死抛出异常！！
@@ -15,4 +15,11 @@ object jiang_try_option extends App {
 
   println(myString)
   println(myOkString)
+
+
+
+  val testMatch = myString match {
+    case Success(value) => value //任何match的参数，都可以理解为构造器传入的参数。本质上的apply方法
+    case Failure(exception) => exception.toString
+  }
 }
